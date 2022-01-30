@@ -1,0 +1,20 @@
+replace "%"
+with "#"
+
+replace " "
+with ","
+
+replace ",=,"
+with "="
+
+replace "[,"
+with "["
+
+replace ",]"
+with "]"
+
+replace "(1)"
+with ""
+
+replace "(1,:)"
+with ""

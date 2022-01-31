@@ -50,11 +50,11 @@ shift
 
 if [ "${initial_step}" = "" ]
 then
-    initial_step=0.05
+    initial_step=0.01
 fi
 if [ "${minimum_step}" = "" ]
 then
-    minimum_step=0.001
+    minimum_step=0.05
 fi
 if [ "${zero_load_inj}" = "" ]
 then

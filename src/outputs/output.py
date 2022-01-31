@@ -26,5 +26,5 @@ while(run<n_packets/2):
 
 print(i)
 
-std_dev = sum([x*(i-plat)**2 for i,x in enumerate(plat_hist)])
-print(np.sqrt(std_dev))
+std_dev = sum([x*(i)**2 for i,x in enumerate(plat_hist)])
+print(np.sqrt(std_dev-plat**2))

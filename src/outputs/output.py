@@ -36,6 +36,7 @@ while(run<n_packets*0.99):
     i+=1
 
 print(i)
+print(n_packets)
 
 
 n_packets = sum(flat_hist)
@@ -59,3 +60,4 @@ while(run<n_packets*0.99):
     i+=1
 
 print(i)
+print(n_packets)

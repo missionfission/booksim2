@@ -28,3 +28,20 @@ print(i)
 
 std_dev = sum([x*(i)**2 for i,x in enumerate(plat_hist)])
 print(np.sqrt(std_dev-plat**2))
+
+
+
+
+n_packets = sum(flat_hist)
+total_latency = [x*i for i,x in enumerate(flat_hist)]
+print(sum(total_latency)/n_packets)
+run = 0
+i=0
+while(run<n_packets/2):
+    run += flat_hist[i]
+    i+=1
+
+print(i)
+
+std_dev = sum([x*(i)**2 for i,x in enumerate(flat_hist)])
+print(np.sqrt(std_dev-flat**2))

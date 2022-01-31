@@ -27,9 +27,15 @@ while(run<n_packets/2):
 print(i)
 
 std_dev = sum([x*(i)**2 for i,x in enumerate(plat_hist)])
-print(np.sqrt(std_dev-plat**2))
+print(np.sqrt(std_dev/n_packets-plat**2))
 
+run = 0
+i=0
+while(run<n_packets*0.99):
+    run += plat_hist[i]
+    i+=1
 
+print(i)
 
 
 n_packets = sum(flat_hist)
@@ -44,4 +50,12 @@ while(run<n_packets/2):
 print(i)
 
 std_dev = sum([x*(i)**2 for i,x in enumerate(flat_hist)])
-print(np.sqrt(std_dev-flat**2))
+print(np.sqrt(std_dev/n_packets-flat**2))
+
+run = 0
+i=0
+while(run<n_packets*0.99):
+    run += flat_hist[i]
+    i+=1
+
+print(i)

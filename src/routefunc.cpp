@@ -259,6 +259,7 @@ void tree4_nca( const Router *r, const Flit *f,
 void fattree_nca( const Router *r, const Flit *f,
                int in_channel, OutputSet* outputs, bool inject)
 {
+  int gT =2;
   int vcBegin = 0, vcEnd = gNumVCs-1;
   if ( f->type == Flit::READ_REQUEST ) {
     vcBegin = gReadReqBeginVC;
@@ -309,7 +310,18 @@ void fattree_nca( const Router *r, const Flit *f,
     } else {
       //up ports are numbered last
       assert(in_channel<gK);//came from a up channel
+      if(router_depth == 1){
+        // taper last hop upwards
+        int random_val = RandomInt(gK-1);
+        if (random_val) { // if non zero
+          random_val = random_val / gT;
+        }
+      out_port = gK+random_val;
+    }
+    else{
       out_port = gK+RandomInt(gK-1);
+
+    }
     }
   }  
   outputs->Clear( );
@@ -323,7 +335,7 @@ void fattree_nca( const Router *r, const Flit *f,
 void fattree_anca( const Router *r, const Flit *f,
                 int in_channel, OutputSet* outputs, bool inject)
 {
-
+  int gT =2;
   int vcBegin = 0, vcEnd = gNumVCs-1;
   if ( f->type == Flit::READ_REQUEST ) {
     vcBegin = gReadReqBeginVC;
@@ -379,19 +391,24 @@ void fattree_anca( const Router *r, const Flit *f,
       out_port = gK;
       int random1 = RandomInt(gK-1); // Chose two ports out of the possible at random, compare loads, choose one.
       int random2 = RandomInt(gK-1);
-      if (r->GetUsedCredit(out_port + random1) > r->GetUsedCredit(out_port + random2)){
-	out_port = out_port + random2;
-      }else{
-	out_port =  out_port + random1;
+    if (random1 && router_depth == 1){
+        random1 = random1 / gT;
       }
-    }
-  }  
+      if (random2 && router_depth == 1){
+        random2 = random2 / gT;
+      }
+
+      if (r->GetUsedCredit(out_port + random1) > r->GetUsedCredit(out_port + random2)){
+        out_port = out_port + random2;
+      }else{
+        out_port =  out_port + random1;
+      }
+      }
+    }  
   outputs->Clear( );
   
   outputs->AddRange( out_port, vcBegin, vcEnd );
 }
-
-
 
 
 // ============================================================

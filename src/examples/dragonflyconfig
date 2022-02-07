@@ -67,7 +67,7 @@ traffic       = uniform;
 
 injection_rate = 0.02;
 packet_size = 10;
-injection_rate_uses_flits=1;
+injection_rate_uses_flits=0;
 
 topology = dragonflynew;
 
@@ -76,4 +76,4 @@ n  = 1;
 
 watch_out=-;
 
-stats_out = output.m;
+stats_out = outputs/packet_injection_0.02.m;

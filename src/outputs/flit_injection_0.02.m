@@ -7,7 +7,7 @@
 %routing_function = 'min';
 %sim_type = 'latency';
 %spec_sw_allocator = 'prio';
-%stats_out = 'output.m';
+%stats_out = 'dragonfly_output.m';
 %sw_allocator = 'separable_input_first';
 %topology = 'dragonflynew';
 %traffic = 'uniform';

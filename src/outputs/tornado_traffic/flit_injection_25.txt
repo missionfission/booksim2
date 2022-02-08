@@ -1,3 +1,4 @@
+BEGIN Configuration File: examples/dragonflyconfig
 // $Id$
 
 // Copyright (c) 2007-2015, Trustees of The Leland Stanford Junior University
@@ -63,17 +64,62 @@ routing_function = min;
 num_vcs     = 2;
 
 priority = none;
-traffic       = bitcomp; 
+traffic       = tornado; 
 
-injection_rate = 0.01;
+injection_rate = 0.25;
 packet_size = 10;
 injection_rate_uses_flits=1;
 
 topology = dragonflynew;
 
-k  = 128;
+k  = 4;
 n  = 1;
 
 watch_out=-;
 
-stats_out = outputs/tornado_traffic/flit_injection_test.m;
+stats_out = outputs/tornado_traffic/flit_injection_25.m;;END Configuration File: examples/dragonflyconfig
+ Dragonfly 
+ p = 4 n = 1
+ each switch - total radix =  15
+ # of switches = 264
+ # of channels = 2904
+ # of nodes ( size of network ) = 1056
+ # of groups (_g) = 33
+ # of routers per group (_a) = 8
+Done links
+Class 0:
+Packet latency average = 3805.42
+	minimum = 14
+	maximum = 9914
+Network latency average = 3793.49
+	minimum = 14
+	maximum = 9914
+Slowest packet = 451
+Flit latency average = 3784.46
+	minimum = 5
+	maximum = 9905
+Slowest flit = 4518
+Fragmentation average = 6.461
+	minimum = 0
+	maximum = 63
+Injected packet rate average = 0.00568324
+	minimum = 0.0039 (at node 336)
+	maximum = 0.025 (at node 0)
+Accepted packet rate average = 0.000377557
+	minimum = 0 (at node 4)
+	maximum = 0.0998 (at node 0)
+Injected flit rate average = 0.056395
+	minimum = 0.0386 (at node 336)
+	maximum = 0.2496 (at node 0)
+Accepted flit rate average= 0.00377822
+	minimum = 0 (at node 4)
+	maximum = 0.9981 (at node 2)
+Injected packet length average = 9.92304
+Accepted packet length average = 10.007
+Total in-flight flits = 560252 (0 measured)
+latency change    = 1
+throughput change = 1
+Average latency for class 0 exceeded 500 cycles. Aborting simulation.
+Too many sample periods needed to converge
+Simulation unstable, ending ...
+Total run time 8.0694

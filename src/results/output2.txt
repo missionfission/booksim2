@@ -1,3 +1,4 @@
+BEGIN Configuration File: examples/fattree_config
 // $Id: dragonflyconfig 3555 2011-05-16 23:37:55Z dub $
 
 // Copyright (c) 2007-2015, Trustees of The Leland Stanford Junior University
@@ -63,7 +64,7 @@ num_vcs     = 4;
 priority = none;
 traffic       = uniform;
 
-injection_rate = 0.2;
+injection_rate = 0.5;
 packet_size = 1;
 injection_rate_uses_flits=1;
 
@@ -73,4 +74,74 @@ topology = fattree;
 k  = 8;
 n  = 4;
 
-watch_out=-;
+watch_out=-;;END Configuration File: examples/fattree_config
+Fat Tree
+ k = 8 levels = 4
+ each switch - total radix =  16
+ # of switches = 2048
+ # of channels = 24576
+ # of nodes ( size of network ) = 4096
+Class 0:
+Packet latency average = 39.641
+	minimum = 6
+	maximum = 114
+Network latency average = 39.641
+	minimum = 6
+	maximum = 114
+Slowest packet = 7545039
+Flit latency average = 39.641
+	minimum = 6
+	maximum = 114
+Slowest flit = 7545039
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.500002
+	minimum = 0.4825 (at node 2178)
+	maximum = 0.5164 (at node 1123)
+Accepted packet rate average = 0.497996
+	minimum = 0.4723 (at node 3653)
+	maximum = 0.5233 (at node 2412)
+Injected flit rate average = 0.500002
+	minimum = 0.4825 (at node 2178)
+	maximum = 0.5164 (at node 1123)
+Accepted flit rate average= 0.497996
+	minimum = 0.4723 (at node 3653)
+	maximum = 0.5233 (at node 2412)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 82140 (0 measured)
+latency change    = 1
+throughput change = 1
+Class 0:
+Packet latency average = 39.6654
+	minimum = 6
+	maximum = 114
+Network latency average = 39.6654
+	minimum = 6
+	maximum = 114
+Slowest packet = 7545039
+Flit latency average = 39.6654
+	minimum = 6
+	maximum = 114
+Slowest flit = 7545039
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.500016
+	minimum = 0.48865 (at node 1577)
+	maximum = 0.5138 (at node 3850)
+Accepted packet rate average = 0.499021
+	minimum = 0.483 (at node 2480)
+	maximum = 0.51965 (at node 1214)
+Injected flit rate average = 0.500016
+	minimum = 0.48865 (at node 1577)
+	maximum = 0.5138 (at node 3850)
+Accepted flit rate average= 0.499021
+	minimum = 0.483 (at node 2480)
+	maximum = 0.51965 (at node 1214)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 81463 (0 measured)
+latency change    = 0.000613709
+throughput change = 0.00205417

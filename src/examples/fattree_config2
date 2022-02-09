@@ -61,7 +61,7 @@ routing_function = nca;
 num_vcs     = 4;
 
 priority = none;
-traffic       = uniform;
+traffic       = bitcomp;
 
 injection_rate = 0.2;
 packet_size = 1;

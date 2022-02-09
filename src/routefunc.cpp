@@ -57,7 +57,7 @@ map<string, tRoutingFunction> gRoutingFunctionMap;
 /* Global information used by routing functions */
 
 int gNumVCs;
-
+int gT;
 /* Add more functions here
  *
  */
@@ -259,7 +259,6 @@ void tree4_nca( const Router *r, const Flit *f,
 void fattree_nca( const Router *r, const Flit *f,
                int in_channel, OutputSet* outputs, bool inject)
 {
-  int gT =2;
   int vcBegin = 0, vcEnd = gNumVCs-1;
   if ( f->type == Flit::READ_REQUEST ) {
     vcBegin = gReadReqBeginVC;
@@ -335,7 +334,6 @@ void fattree_nca( const Router *r, const Flit *f,
 void fattree_anca( const Router *r, const Flit *f,
                 int in_channel, OutputSet* outputs, bool inject)
 {
-  int gT =2;
   int vcBegin = 0, vcEnd = gNumVCs-1;
   if ( f->type == Flit::READ_REQUEST ) {
     vcBegin = gReadReqBeginVC;
@@ -1935,6 +1933,8 @@ void InitializeRoutingMap( const Configuration & config )
 {
 
   gNumVCs = config.GetInt( "num_vcs" );
+  gT = config.GetInt( "gT" );
+
 
   //
   // traffic class partitions
